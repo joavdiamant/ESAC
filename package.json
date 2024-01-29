@@ -1,6 +1,6 @@
 {
   "name": "esac",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "packege for translate text to currect language if you type in gibrish",
   "scripts": {
     "test": "npm start"
