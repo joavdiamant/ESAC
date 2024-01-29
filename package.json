@@ -1,6 +1,6 @@
 {
   "name": "esac",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "packege for translate text to currect language if you type in gibrish",
   "scripts": {
     "test": "npm start"
@@ -15,7 +15,8 @@
   ],
   "author": {
     "name": "joavdiamant",
-    "email": "joav.di@gmail.com"
+    "email": "joav.di@gmail.com",
+    "url": "https://github.com/joavdiamant/ESAC"
   },
   "type": "module",
   "exports": "./esac.js",
