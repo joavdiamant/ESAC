@@ -1,0 +1,28 @@
+{
+  "name": "esac",
+  "version": "1.0.19",
+  "description": "packege for translate text to currect language if you type in gibrish",
+  "scripts": {
+    "test": "npm start"
+  },
+  "keywords": [
+    "language:",
+    "hebrew",
+    "english",
+    "arabic",
+    "spanish",
+    "russion"
+  ],
+  "author": {
+    "name": "joavdiamant",
+    "email": "joav.di@gmail.com"
+  },
+  "type": "module",
+  "exports": "./esac.js",
+  "types": "./index.d.ts",
+  "license": "MIT",
+  "files": [
+    "esac.js",
+    "index.d.ts"
+  ]
+}
