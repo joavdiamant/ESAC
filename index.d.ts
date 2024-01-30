@@ -1,10 +1,7 @@
 
 
 
-export type language = 'he'|'en'|'ar'|'ru'|'es';
-
-
 export default function TranslateToTextLanguage(
 	text: string,
-	language: language
+	language: 'he'|'en'|'ar'|'ru'|'es'|'de'|'am'|'fr'|'ch'
 ): string;
