@@ -180,7 +180,156 @@ const dictionary = {
     BracketLeft:'`^',
     BracketRight:'+',
     Backquote:'ç'
-  }
+  },
+  de: {
+    KeyA:'a',
+    KeyB:'b',
+    KeyC:'c',
+    KeyD:'d',
+    KeyE:'e',
+    KeyF:'f',
+    KeyG:'g',
+    KeyH:'h',
+    KeyI:'i',
+    KeyJ:'j',
+    KeyK:'k',
+    KeyL:'l',
+    KeyM:'m',
+    KeyN:'n',
+    KeyO:'o',
+    KeyP:'p',
+    KeyQ:'q',
+    KeyR:'r',
+    KeyS:'s',
+    KeyT:'t',
+    KeyU:'u',
+    KeyV:'v',
+    KeyW:'w',
+    KeyX:'x',
+    KeyY:'z',
+    KeyZ:'y',
+    Comma:'ä',
+    Period:'.',
+    Slash:'-',
+    Semicolon:'ö',
+    Quote:`ä`,
+    BracketLeft:'+',
+    BracketRight:'ü',
+    Backquote:'#',
+
+  },
+  am: {
+    KeyA:'አ',
+    KeyB:'ብ',
+    KeyC:'ች',
+    KeyD:'ድ',
+    KeyE:'እ',
+    KeyF:'ፍ',
+    KeyG:'ግ',
+    KeyH:'ህ',
+    KeyI:'ኢ',
+    KeyJ:'ጅ',
+    KeyK:'ክ',
+    KeyL:'ል',
+    KeyM:'ም',
+    KeyN:'ን',
+    KeyO:'ኦ',
+    KeyP:'ፕ',
+    KeyQ:'ቅ',
+    KeyR:'ር',
+    KeyS:'ስ',
+    KeyT:'ት',
+    KeyU:'ኡ',
+    KeyV:'ቭ',
+    KeyW:'ው',
+    KeyX:'ሽ',
+    KeyY:'ይ',
+    KeyZ:'ዝ',
+    Comma:'፣',
+    Period:'።',
+    Slash:'/',
+    Semicolon:'፤',
+    Quote:`'`,
+    BracketLeft:']',
+    BracketRight:'[',
+    Backquote:'\\',
+
+  },
+  ch: {
+    KeyA:'啊',
+    KeyB:'吧',
+    KeyC:'从',
+    KeyD:'的',
+    KeyE:'额',
+    KeyF:'发',
+    KeyG:'给',
+    KeyH:'和',
+    KeyI:'i',
+    KeyJ:'就',
+    KeyK:'看',
+    KeyL:'了',
+    KeyM:'吗',
+    KeyN:'你',
+    KeyO:'哦',
+    KeyP:'怕',
+    KeyQ:'去',
+    KeyR:'人',
+    KeyS:'是',
+    KeyT:'他',
+    KeyU:'u',
+    KeyV:'v',
+    KeyW:'我',
+    KeyX:'下',
+    KeyY:'有',
+    KeyZ:'在',
+    Comma:'，',
+    Period:'。',
+    Slash:'、',
+    Semicolon:'；',
+    Quote:`‘`,
+    BracketLeft:'】',
+    BracketRight:'【',
+    Backquote:'、',
+
+  },
+  fr: {
+    KeyA:'q',
+    KeyB:'b',
+    KeyC:'c',
+    KeyD:'d',
+    KeyE:'e',
+    KeyF:'f',
+    KeyG:'g',
+    KeyH:'h',
+    KeyI:'i',
+    KeyJ:'j',
+    KeyK:'k',
+    KeyL:'l',
+    KeyM:',',
+    KeyN:'n',
+    KeyO:'o',
+    KeyP:'p',
+    KeyQ:'a',
+    KeyR:'r',
+    KeyS:'s',
+    KeyT:'t',
+    KeyU:'u',
+    KeyV:'v',
+    KeyW:'z',
+    KeyX:'x',
+    KeyY:'y',
+    KeyZ:'w',
+    Comma:';',
+    Period:':',
+    Slash:'!',
+    Semicolon:'m',
+    Quote:`ù`,
+    BracketLeft:'$',
+    BracketRight:'',
+    Backquote:'*',
+
+  },
+
 }
 
 const Regexes={
@@ -189,6 +338,9 @@ const Regexes={
   ar : /[\u0600-\u06ff]|[\u0750-\u077f]|[\ufb50-\ufbc1]|[\ufbd3-\ufd3f]|[\ufd50-\ufd8f]|[\ufd92-\ufdc7]|[\ufe70-\ufefc]|[\uFDF0-\uFDFD]/,
   ru : /[\u0400-\u04FF]/,
   es : /[\u00C0-\u00ff\s]/,
+  fr:  /[\u00C0-\u017F]/,
+  ch: /^[\u4e00-\u9fa5]{0,}$/,
+  am: /[\u1200-\u137F]/,
   chars:/^[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/
 }
 
@@ -317,11 +469,23 @@ const GetWordLanguage = (checkWord) =>{
             if(checkWord.match(Regexes.ar)){
                 currentLanguage=dictionary.ar
             }
-          else{
+          else
             if(checkWord.match(Regexes.ru)){
               currentLanguage=dictionary.ru
             }
-          }
+            else
+              if(checkWord.match(Regexes.fr)){
+                currentLanguage=dictionary.fr
+              }
+              else
+                if(checkWord.match(Regexes.am)){
+                  currentLanguage=dictionary.am
+                }
+                else{
+                  if(checkWord.match(Regexes.ch)){
+                      currentLanguage=dictionary.ch
+                    }
+          
           return currentLanguage;
 }
 
